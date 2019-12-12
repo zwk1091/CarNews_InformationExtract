@@ -10,7 +10,12 @@ word2vec表示获取词向量的代码
 
 
 
-word2vec:
+使用word2vec获取词向量:
 
 <https://blog.csdn.net/qq_27586341/article/details/90025288> 
 
+
+
+使用bert 获取词向量：
+
+<https://blog.csdn.net/u014553172/article/details/89890888> 
