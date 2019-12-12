@@ -7,3 +7,10 @@
 运行preprocess_cutword.py得到分词的数据
 
 word2vec表示获取词向量的代码
+
+
+
+word2vec:
+
+<https://blog.csdn.net/qq_27586341/article/details/90025288> 
+
