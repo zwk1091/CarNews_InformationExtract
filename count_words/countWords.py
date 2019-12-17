@@ -3,20 +3,25 @@ import pandas as pd
 import csv
 import re
 
-technologyPath = "技术词.txt"
-carPath = "汽车词典统计.xlsx"
+technologyPath = "../技术词.txt"
+carPath = "../CarDic.xlsx"
 
 reader = open(technologyPath, encoding='utf-8')
 technology_data = reader.readlines()
 technology_data_length = len(technology_data)
 
 car_data=pd.read_excel(carPath)
-company=car_data["汽车集团"].values
+group = car_data["汽车集团"].values
+company = car_data["汽车公司"].values
+group=list(set(group))
 company=list(set(company))
+company += group
+company=list(set(company))
+
 company_length=len(company)
 
 car = car_data["汽车"].values
-print (car[0])
+# print (car[0])
 car_length=len(car)
 
 cars=[]
@@ -26,7 +31,7 @@ cars=list(set(cars))
 cars_length=len(cars)
 # print (cars)
 
-print(car_data["汽车集团"].values)
+# print(car_data["汽车集团"].values)
 
 for i in range(technology_data_length):
     technology_data[i] = technology_data[i].replace("\n", "")
@@ -34,7 +39,7 @@ for i in range(technology_data_length):
 count_technology = [0]*technology_data_length
 count_company=[0]*company_length
 count_car=[0]*cars_length
-rawDataPath = "NewsCar_new_after_process/"
+rawDataPath = "../NewsCar_new_after_process/"
 # 读取原始文件
 for i in range(1,19782):
     inPath  = rawDataPath+str(int((i-1)/1000)+1)+"/"+str(i)+".txt"
